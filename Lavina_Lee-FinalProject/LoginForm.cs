@@ -6,5 +6,10 @@ namespace Lavina_Lee_FinalProject
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
