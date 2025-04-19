@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lavina_Lee_FinalProject
 {
-    internal class User
+    public class User
     {
         String username;
         String password;
