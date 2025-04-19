@@ -32,13 +32,60 @@ namespace Lavina_Lee_FinalProject
                 user_root.SetAttribute("user_count", "0");
                 user_count = 0;
 
+                user_info.AppendChild(user_root);
+
                 user_info.Save(users_path);
             }
         }
 
-        public bool does_user_exist(string username, string password)
+        public bool does_user_exist(string username)
         {
-            return true;
+            foreach (XmlElement current_user in user_root.ChildNodes)
+            {
+                string cur_name = current_user.GetAttribute("username");
+
+                if (cur_name == username)
+                {
+                    return true;
+                }
+            }
+
+            // No username matched, return false
+            return false;
+        }
+
+        public bool verify_user(string username, string password)
+        {
+            foreach (XmlElement current_user in user_root.ChildNodes)
+            {
+                string cur_name = current_user.GetAttribute("username");
+                string cur_pass = current_user.GetAttribute("password");
+
+                if (cur_name == username && cur_pass == password)
+                {
+                    return true;
+                }
+            }
+
+            // No username and password matched, return false
+            return false;
+        }
+
+        public void add_user(string username, string password)
+        {
+            XmlElement new_user = user_info.CreateElement("user");
+            new_user.SetAttribute("username", username);
+            new_user.SetAttribute("password", password);
+
+            if (!does_user_exist(username))
+            {
+                user_root.AppendChild(new_user);
+            }
+
+            user_count++;
+            user_root.SetAttribute("user_count", user_count.ToString());
+
+            user_info.Save(users_path);
         }
     }
 }
