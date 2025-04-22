@@ -40,10 +40,9 @@
             // 
             // SignUpButton
             // 
-            SignUpButton.Location = new Point(218, 67);
-            SignUpButton.Margin = new Padding(3, 2, 3, 2);
+            SignUpButton.Location = new Point(249, 89);
             SignUpButton.Name = "SignUpButton";
-            SignUpButton.Size = new Size(82, 22);
+            SignUpButton.Size = new Size(94, 29);
             SignUpButton.TabIndex = 9;
             SignUpButton.Text = "Sign Up";
             SignUpButton.UseVisualStyleBackColor = true;
@@ -51,53 +50,50 @@
             // 
             // SignUpPasswordTextbox
             // 
-            SignUpPasswordTextbox.Location = new Point(190, 40);
-            SignUpPasswordTextbox.Margin = new Padding(3, 2, 3, 2);
+            SignUpPasswordTextbox.Location = new Point(217, 53);
             SignUpPasswordTextbox.Name = "SignUpPasswordTextbox";
-            SignUpPasswordTextbox.Size = new Size(110, 23);
+            SignUpPasswordTextbox.Size = new Size(125, 27);
             SignUpPasswordTextbox.TabIndex = 8;
             // 
             // SignUpPasswordLabel
             // 
             SignUpPasswordLabel.AutoSize = true;
-            SignUpPasswordLabel.Location = new Point(120, 42);
+            SignUpPasswordLabel.Location = new Point(137, 56);
             SignUpPasswordLabel.Name = "SignUpPasswordLabel";
-            SignUpPasswordLabel.Size = new Size(57, 15);
+            SignUpPasswordLabel.Size = new Size(70, 20);
             SignUpPasswordLabel.TabIndex = 7;
             SignUpPasswordLabel.Text = "Password";
             // 
             // SignUpUsernameLabel
             // 
             SignUpUsernameLabel.AutoSize = true;
-            SignUpUsernameLabel.Location = new Point(120, 14);
+            SignUpUsernameLabel.Location = new Point(137, 19);
             SignUpUsernameLabel.Name = "SignUpUsernameLabel";
-            SignUpUsernameLabel.Size = new Size(60, 15);
+            SignUpUsernameLabel.Size = new Size(75, 20);
             SignUpUsernameLabel.TabIndex = 6;
             SignUpUsernameLabel.Text = "Username";
             // 
             // SignUpUsernameTextbox
             // 
-            SignUpUsernameTextbox.Location = new Point(191, 11);
-            SignUpUsernameTextbox.Margin = new Padding(3, 2, 3, 2);
+            SignUpUsernameTextbox.Location = new Point(218, 15);
             SignUpUsernameTextbox.Name = "SignUpUsernameTextbox";
-            SignUpUsernameTextbox.Size = new Size(110, 23);
+            SignUpUsernameTextbox.Size = new Size(125, 27);
             SignUpUsernameTextbox.TabIndex = 5;
             // 
             // SignUpMessageBox
             // 
             SignUpMessageBox.AutoSize = true;
-            SignUpMessageBox.Location = new Point(12, 108);
+            SignUpMessageBox.Location = new Point(14, 144);
             SignUpMessageBox.Name = "SignUpMessageBox";
-            SignUpMessageBox.Size = new Size(60, 15);
+            SignUpMessageBox.Size = new Size(75, 20);
             SignUpMessageBox.TabIndex = 10;
             SignUpMessageBox.Text = "Welcome!";
             // 
             // SignUpFormLoginButton
             // 
-            SignUpFormLoginButton.Location = new Point(221, 189);
-            SignUpFormLoginButton.Margin = new Padding(3, 2, 3, 2);
+            SignUpFormLoginButton.Location = new Point(253, 252);
             SignUpFormLoginButton.Name = "SignUpFormLoginButton";
-            SignUpFormLoginButton.Size = new Size(82, 22);
+            SignUpFormLoginButton.Size = new Size(94, 29);
             SignUpFormLoginButton.TabIndex = 12;
             SignUpFormLoginButton.Text = " Login";
             SignUpFormLoginButton.UseVisualStyleBackColor = true;
@@ -106,17 +102,17 @@
             // SignUpFormLoginLabel
             // 
             SignUpFormLoginLabel.AutoSize = true;
-            SignUpFormLoginLabel.Location = new Point(97, 192);
+            SignUpFormLoginLabel.Location = new Point(111, 256);
             SignUpFormLoginLabel.Name = "SignUpFormLoginLabel";
-            SignUpFormLoginLabel.Size = new Size(118, 15);
+            SignUpFormLoginLabel.Size = new Size(148, 20);
             SignUpFormLoginLabel.TabIndex = 11;
             SignUpFormLoginLabel.Text = "Old user? Login here:";
             // 
             // SignUpForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(315, 222);
+            ClientSize = new Size(360, 296);
             Controls.Add(SignUpFormLoginButton);
             Controls.Add(SignUpFormLoginLabel);
             Controls.Add(SignUpMessageBox);
@@ -125,6 +121,7 @@
             Controls.Add(SignUpPasswordLabel);
             Controls.Add(SignUpUsernameLabel);
             Controls.Add(SignUpUsernameTextbox);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SignUpForm";
             Text = "Sign Up Form";
             ResumeLayout(false);

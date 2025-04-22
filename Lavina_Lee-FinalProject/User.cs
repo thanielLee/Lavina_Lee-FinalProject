@@ -10,11 +10,14 @@ namespace Lavina_Lee_FinalProject
     {
         String username;
         String password;
+        int user_id;
+        string profile_path;
 
-        public User(String name, String pass)
+        public User(String name, String pass, int user_id)
         {
             username = name;
             password = pass;
+            this.user_id = user_id;
         }
     }
 }

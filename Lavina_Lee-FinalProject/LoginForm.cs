@@ -14,9 +14,12 @@ namespace Lavina_Lee_FinalProject
             string cur_name = LoginUsernameTextbox.Text;
             string cur_pass = LoginPasswordTextbox.Text;
 
-            if (xmlManager.verify_user(cur_name, cur_pass))
+            int user_id = xmlManager.verify_user(cur_name, cur_pass);
+
+            // Check if user_id found
+            if (user_id != -1)
             {
-                User current_user = new User(cur_name, cur_pass);
+                User current_user = new User(cur_name, cur_pass, user_id);
                 MainForm main_form = new MainForm(current_user);
                 main_form.Show();
                 this.Close();

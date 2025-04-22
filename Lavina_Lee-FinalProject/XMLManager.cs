@@ -54,7 +54,7 @@ namespace Lavina_Lee_FinalProject
             return false;
         }
 
-        public bool verify_user(string username, string password)
+        public int verify_user(string username, string password)
         {
             foreach (XmlElement current_user in user_root.ChildNodes)
             {
@@ -63,19 +63,28 @@ namespace Lavina_Lee_FinalProject
 
                 if (cur_name == username && cur_pass == password)
                 {
-                    return true;
+
+                    string id_string = current_user.GetAttribute("user_id");
+                    int user_id;
+                    int.TryParse(id_string, out user_id);
+
+                    // If username and password matched, return the user id
+                    return user_id;
                 }
             }
 
-            // No username and password matched, return false
-            return false;
+            // No username and password matched, return -1
+            return -1;
         }
 
-        public void add_user(string username, string password)
+        // Returns the id of the new user
+        public int add_user(string username, string password)
         {
             XmlElement new_user = user_info.CreateElement("user");
             new_user.SetAttribute("username", username);
             new_user.SetAttribute("password", password);
+            new_user.SetAttribute("user_id", user_count.ToString());
+            int user_id = user_count;
 
             if (!does_user_exist(username))
             {
@@ -86,6 +95,12 @@ namespace Lavina_Lee_FinalProject
             user_root.SetAttribute("user_count", user_count.ToString());
 
             user_info.Save(users_path);
+            return user_id;
+        }
+
+        public void change_profile_path(string new_path, int user_id)
+        {
+
         }
     }
 }
