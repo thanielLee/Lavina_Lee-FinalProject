@@ -26,9 +26,13 @@ namespace Lavina_Lee_FinalProject
 
             if (!xmlManager.does_user_exist(cur_name))
             {
-                int user_id = xmlManager.add_user(cur_name, cur_pass);
-                User current_user = new User(cur_name, cur_pass, user_id);
-                MainForm main_form = new MainForm(current_user);
+                UserStruct userStruct = xmlManager.add_user(cur_name, cur_pass);
+                int user_id = userStruct.user_id;
+                string profile_path = userStruct.profile_path;
+
+
+                User current_user = new User(cur_name, cur_pass, user_id, profile_path);
+                MainForm main_form = new MainForm(current_user, ref xmlManager);
                 main_form.Show();
                 this.Close();
             }

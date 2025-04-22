@@ -14,13 +14,17 @@ namespace Lavina_Lee_FinalProject
             string cur_name = LoginUsernameTextbox.Text;
             string cur_pass = LoginPasswordTextbox.Text;
 
-            int user_id = xmlManager.verify_user(cur_name, cur_pass);
+            UserStruct new_user_struct = xmlManager.verify_user(cur_name, cur_pass);
+            int user_id = new_user_struct.user_id;
+            string profile_path = new_user_struct.profile_path;
+
+           
 
             // Check if user_id found
             if (user_id != -1)
             {
-                User current_user = new User(cur_name, cur_pass, user_id);
-                MainForm main_form = new MainForm(current_user);
+                User current_user = new User(cur_name, cur_pass, user_id, profile_path);
+                MainForm main_form = new MainForm(current_user, ref xmlManager);
                 main_form.Show();
                 this.Close();
             }

@@ -11,9 +11,9 @@ namespace Lavina_Lee_FinalProject
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            TestForm new_test = new TestForm();
-            Application.Run(new_test);
-            return;
+            //TestForm new_test = new TestForm();
+            //Application.Run(new_test);
+            //return;
             XMLManager xmlManager = new XMLManager();
             LoginForm login_form = new LoginForm(ref xmlManager);
             login_form.Show();
